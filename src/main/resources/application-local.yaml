@@ -1,0 +1,17 @@
+spring:
+    application:
+        name: resolveja 
+    datasource:
+        url: jdbc:postgresql://localhost:5445/db_resolveja
+        username: root
+        password: root
+    jpa:
+        show-sql: true
+        hibernate:
+            ddl-auto: validate
+        properties:
+            hibernate:
+                "[format-sql]": true
+    flyway:
+        enabled: true
+        locations: classpath:db/migration
