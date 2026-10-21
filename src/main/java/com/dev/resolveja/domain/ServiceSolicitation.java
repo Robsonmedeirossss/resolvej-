@@ -21,10 +21,12 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
+import lombok.Builder;
 import lombok.Data;
 
 @Data 
-@Entity 
+@Entity
+@Builder 
 @Table(name = "service_solicitations", schema = "sc_resolveja") 
 public class ServiceSolicitation {
     

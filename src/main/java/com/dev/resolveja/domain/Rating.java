@@ -15,14 +15,19 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data 
 @Entity 
+@Builder 
+@NoArgsConstructor 
+@AllArgsConstructor
 @Table(name = "ratings", schema = "sc_resolveja")
 public class Rating {
     
@@ -34,7 +39,7 @@ public class Rating {
         allocationSize = 1
     )
     private Long id;
-    private Integer note;
+    private Short note;
     private String comment;
 
     @Enumerated(EnumType.STRING)

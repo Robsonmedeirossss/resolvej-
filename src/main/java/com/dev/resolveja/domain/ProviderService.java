@@ -16,10 +16,16 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data 
-@Entity()
+@Entity
+@Builder 
+@NoArgsConstructor 
+@AllArgsConstructor
 @Table(name = "provider_services", schema = "sc_resolveja")
 public class ProviderService {
 

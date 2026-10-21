@@ -80,10 +80,10 @@ CREATE TABLE IF NOT EXISTS service_solicitations
     CONSTRAINT fk_provider_service_solicitation FOREIGN KEY(provider_service_id) REFERENCES provider_services(id),
     CONSTRAINT ck_service_solicitation_status CHECK (
         status IN(
-            'PENDENTE',
-            'CONFIRMADO',
-            'REALIZADO',
-            'CANCELADO'
+            'PENDING',
+            'CONFIRMED',
+            'REALIZED',
+            'CANCELED'
         )
     ),
     CONSTRAINT ck_price_solicitation CHECK(
@@ -108,9 +108,9 @@ CREATE TABLE IF NOT EXISTS ratings
     CONSTRAINT fk_ratings_services_solicitation FOREIGN KEY(service_solicitation_id) REFERENCES service_solicitations(id),
     CONSTRAINT ck_ratings_status CHECK(
         status IN(
-            'PENDENTE',
-            'APROVADO',
-            'RECUSADO'
+            'PENDING',
+            'APPROVED',
+            'REJECTED'
         )
     ),
     CONSTRAINT check_rating_interval CHECK(
